@@ -1,0 +1,20 @@
+<div class="daySchedule">
+    <p>Topic</p>
+<p>{{topicTitle}}</p>
+<p>Topic Desc</p>
+<p>{{topicDesc}}</p>
+<form (ngSubmit)="OnUpdate()">
+    
+    <label for="actualDate">Actual Date:</label><br>
+    <input type="text" id="actualDate" name="actualDate" [(ngModel)]="actualDate"><br>
+    <label for="expectedDate">Expected Date:</label><br>
+    <input type="text" id="expectedDate" name="expectedDate" [(ngModel)]="expectedDate"><br>
+    <label for="progress">Progress</label><br>
+    <input type="text" id="progress" name="progress" [(ngModel)]="progress"><br>
+    <label for="resources">Resources:</label><br>
+    <input type="text" id="resources" name="resources" [(ngModel)]="resources"><br>
+    <label for="sturesources">Student Resources:</label><br>
+    <input type="text" id="sturesources" name="sturesources" [(ngModel)]="sturesources"><br>
+    <input type="submit" value="update">
+</form>
+</div>

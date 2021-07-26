@@ -1,0 +1,13 @@
+<table id="t01">
+    <tr>
+      <th>Start Date</th>
+      <th>Mentor Name</th> 
+      <th>Trainee Name</th>
+    </tr>
+    <tr *ngFor="let singletraining of trainingCardList; let i = index" (click)="cardClick(i)">
+      <td>{{singletraining.startDate}}</td>
+      <td>{{singletraining.mentorName}}</td>
+      <td>{{singletraining.traineeName}}</td>
+    </tr> 
+   
+  </table>

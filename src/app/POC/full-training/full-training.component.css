@@ -1,0 +1,14 @@
+.detail-block{
+    background-color: #eee;    
+}
+
+.startDate-block,.mentor-block,.trainee-block,.tech-names{
+    display: flex;
+    margin-right: 10px;
+}
+.block-items{
+    display: flex;
+}
+.basicDetails{
+    display: flex;
+}

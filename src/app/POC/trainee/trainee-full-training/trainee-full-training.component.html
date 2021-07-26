@@ -1,0 +1,58 @@
+<div class="detail-block">
+    <h2 class="block-title">Basic Details</h2>
+    <div class="basicDetails">
+       
+        <div class="block-items">
+            <div class="startDate-block">
+                <p class="startDate">start Date</p>
+                 <p>25-7-2021</p>
+            </div>
+        </div>
+
+        <div class="block-items">
+            <div class="mentor-block">
+                <p class="mentorName">Mentor Name</p>
+                 <p>Raju</p>
+            </div>
+        </div>
+        <div class="block-items">
+            <div class="trainee-block">
+                <p class="traineeName">Trainee Name</p>
+                 <p>Kaju</p>
+            </div>
+        </div>
+        <div class="block-items">
+            <div class="tech-names">
+                <p class="techName">technames</p>
+                <p *ngFor="let tech of techs">{{tech}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="detail-block">
+    <div class="weekelyReview">
+        <h2 class="block-title">Weekely Reviews</h2>
+        <form (ngSubmit)="OnWeekelyReviewSubmit()">
+            <label for="weekNo">Week Number</label>
+            <input type="text" name="weekNo" id="weekNo" [(ngModel)]="weekNo">
+        
+            <label for="weekReview">review</label>
+            <input type="text" name="weekReview" id="weekReview" [(ngModel)]="weekReview">
+        
+            <input type="submit" value="submit">
+        </form>
+        <div *ngFor="let weekreview of weekelyReviews">
+            <app-weekly-review  [weekreview]="weekreview"></app-weekly-review>
+        </div>
+        
+    </div>
+</div>
+<div class="detail-block">
+    <div class="trainingDays">
+        <h2 class="block-title">Training Schedule</h2>
+        <div *ngFor="let day of trainingDays">
+            <app-day-schedule [day]="day"></app-day-schedule>
+        </div>
+    </div>
+</div>

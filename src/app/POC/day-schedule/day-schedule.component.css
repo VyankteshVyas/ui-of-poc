@@ -1,0 +1,10 @@
+.daySchedule{
+    background-color: yellow;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    
+}
+form{
+    display: flex;
+}

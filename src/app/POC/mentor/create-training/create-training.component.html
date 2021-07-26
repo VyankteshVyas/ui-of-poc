@@ -1,0 +1,68 @@
+<h2>Create Training</h2>
+
+<div class="authPage">
+    <form  (ngSubmit)="onSubmit()" >
+        <div class="basicDetails">
+
+            <label for="startDate">startDate</label>
+            <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate">
+            
+            <ng-multiselect-dropdown [placeholder]="'selected mentor'" [settings]="mentordropdownSettings" [data]="mentorlist"
+                 (onSelect)="onmentorSelect($event)" (onDeSelect)="onmentordeselect($event)"
+                class="multiSelectDropDown">
+            </ng-multiselect-dropdown>
+            <ng-multiselect-dropdown [placeholder]="'select trainee'" [settings]="traineedropdownSettings"
+                [data]="traineelist"  (onSelect)="ontraineeselect($event)" (onDeSelect)="ontraineedeselect($event)"
+                class="multiSelectDropDown">
+            </ng-multiselect-dropdown>
+            <ng-multiselect-dropdown [placeholder]="'select techs'" [settings]="techdropdownSettings" [data]="techlist"
+                 (onSelect)="ontechselect($event)" (onDeSelect)="ontechdeselect($event)" 
+                class="multiSelectDropDown">
+            </ng-multiselect-dropdown>
+        </div>
+
+        <div class="trainingReview">
+            <label for="trainingReview" >Training Review</label>
+            <input type="text"  [(ngModel)]="trainingReview" id="trainingReview" name="trainingReview" >
+        </div>
+
+        <!-- <div class="weekreview">
+            <h3>Weekely reviews</h3>
+            <app-weekly-review></app-weekly-review>
+        </div> -->
+
+        <div class="trainingDays">
+            <div class="trainingDaysHeading">
+                <h3>Daily Training Schedule</h3><form 
+                (ngSubmit)="onAddDay()">
+                    <label for="title">Enter you title</label>
+                    <input type="text" name="title" id="title" [(ngModel)]="topic">
+                    <label for="desc">Enter topic desc</label>
+                    <input type="text" name="desc" id="desc" [(ngModel)]="topicdesc">
+                    <label for="res">Enter resources</label>
+                    <input type="text" name="res" id="res" [(ngModel)]="topicres">
+                    <label for="expdate">Expected Date</label>
+                    <input type="date" name="expdate" id="expdate" [(ngModel)]="expectedDate">
+                    <label for="actdate">Actual Date</label>
+                    <input type="date" name="actdate" id="actdate" [(ngModel)]="actualDate"><br>
+                    <label for="stuRes">Student resources</label>
+                    <input type="text" name="stuRes" id="stuRes" [(ngModel)]="studentres">
+                    <label for="progress">progress</label>
+                    <input type="text" name="progress" id="progress" [(ngModel)]="progress">
+            
+                    <input type="submit" value="Add">
+                </form>
+                
+            </div> 
+            
+            <div *ngFor="let day of days">
+                <app-training-days [day]="day"></app-training-days>
+            </div>
+                      
+        </div>
+
+        <input type="submit" value="submit">
+    </form>
+
+
+</div>
